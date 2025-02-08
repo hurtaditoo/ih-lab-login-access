@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema(
       maxLength: [30, "User name characters must be lower than 30"],
       trim: true,
     },
+
     email: {
       type: String,
       trim: true,
@@ -22,11 +23,13 @@ const userSchema = new mongoose.Schema(
       required: [true, "User email is required"],
       match: [EMAIL_PATTERN, "Invalid user email pattern"],
     },
+
     password: {
       type: String,
       required: [true, "User password is required"],
       match: [PASSWORD_PATTERN, "Invalid user password pattern"],
     },
+
     avatar: {
       type: String,
       default: function () {
@@ -46,6 +49,7 @@ const userSchema = new mongoose.Schema(
         },
       },
     },
+    
   },
   {
     timestamps: true,

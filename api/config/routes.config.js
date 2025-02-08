@@ -7,7 +7,7 @@ const sessions = require("../controllers/sessions.controller");
 const auth = require("../middlewares/session.middleware");
 
 router.post("/users", users.create);
-router.get("/users/me", auth.checkSession, users.profile);
+router.get("/users/me", auth.checkSession, users.profile); 
 
 router.post("/sessions", sessions.create);
 router.delete("/sessions", auth.checkSession, sessions.destroy);
